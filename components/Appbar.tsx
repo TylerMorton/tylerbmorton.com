@@ -25,6 +25,7 @@ function Appbar() {
       <IconButton 
         color='neutral'
         variant='outlined'
+        aria-label='menu'
         onClick={() => openSidebar()}
       >
         <Menu />

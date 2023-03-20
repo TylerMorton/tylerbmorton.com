@@ -30,7 +30,7 @@ function MyImage() {
       }}>
         <Image
           src='https://source.unsplash.com/random?portrait'
-          alt='profile'
+          alt='Picture of me.'
           fill
           object-fit='contain'
         />

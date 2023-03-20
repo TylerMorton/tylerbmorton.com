@@ -3,18 +3,22 @@ import * as React from 'react';
 import Head from 'next/head'
 
 // Joy UI Imports
-import HomeContent from '@/components/home/HomeContent';
 import Appbar from '@/components/Appbar';
-import { Box, CssBaseline } from '@mui/joy';
+import { Box, CssBaseline, Typography } from '@mui/joy';
 import Sidebar from '@/components/Sidebar';
 import { closeSidebar } from '@/components/common/sidebar';
 
+import Post from '../../types/Post';
 
-export default function Home() {
+type Props = {
+  projectPosts: Post[],
+}
+
+
+export default function Projects({ projectPosts }: Props) {
   React.useEffect(() => {
     closeSidebar();
   }, [])
-
   return (
     <Box sx={{ display: 'flex', height: '100dvh'}}>
       <Head>
@@ -26,7 +30,7 @@ export default function Home() {
       <CssBaseline />
       <Appbar />
       <Sidebar />
-      <HomeContent />
+      <Typography mt={10}>Hello There Hello</Typography>
     </Box>
   )
 }

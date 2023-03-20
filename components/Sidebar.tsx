@@ -1,4 +1,8 @@
 import * as React from 'react';
+
+import Router from 'next/router';
+
+
 import Box from '@mui/joy/Box';
 import Chip from '@mui/joy/Chip';
 import List from '@mui/joy/List';
@@ -7,12 +11,20 @@ import ListItem from '@mui/joy/ListItem';
 import ListItemContent from '@mui/joy/ListItemContent';
 import ListItemDecorator from '@mui/joy/ListItemDecorator';
 import ListItemButton from '@mui/joy/ListItemButton';
+import SideBarListItem from './SideBarListItem';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 import { closeSidebar } from './common/sidebar';
 
+import { Home, HardDrive, Map, Globe, Sunset, MoreHorizontal,  Headphones, Coffee } from 'react-feather';
+
+
+
 export default function Sidebar() {
+  const buttonHandler = (str: string) => {
+    Router.push(str);
+  } 
   return (
     <>
       <Box
@@ -39,7 +51,7 @@ export default function Sidebar() {
         sx={{
           position: {
             xs: 'fixed',
-            lg: 'sticky',
+            lg: 'fixed',
           },
           transform: {
             xs: 'translateX(calc(100% * (var(--SideNavigation-slideIn, 0) - 1) + var(--SideNavigation-slideIn, 0) * var(--FirstSidebar-width, 0px)))',
@@ -55,6 +67,7 @@ export default function Sidebar() {
           py: 3,
           flexShrink: 0,
           display: 'flex',
+
           flexDirection: 'column',
           gap: 2,
         }}
@@ -67,67 +80,16 @@ export default function Sidebar() {
           }}
         >
           <ListSubheader role="presentation" sx={{ color: 'text.primary' }}>
-            Dashboard
+            Menu
           </ListSubheader>
-          <ListItem>
-            <ListItemButton>
-              <ListItemDecorator>
-                <i data-feather="activity" />
-              </ListItemDecorator>
-              <ListItemContent>Overview</ListItemContent>
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemDecorator>
-                <i data-feather="bell" />
-              </ListItemDecorator>
-              <ListItemContent>Notification</ListItemContent>
-              <Chip variant="soft" size="sm">
-                10
-              </Chip>
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemDecorator>
-                <i data-feather="bar-chart" />
-              </ListItemDecorator>
-              <ListItemContent>Analytics</ListItemContent>
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemDecorator>
-                <i data-feather="star" />
-              </ListItemDecorator>
-              <ListItemContent>Saved reports</ListItemContent>
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton selected variant="soft">
-              <ListItemDecorator>
-                <i data-feather="shopping-cart" />
-              </ListItemDecorator>
-              <ListItemContent>Orders</ListItemContent>
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemDecorator>
-                <i data-feather="user" />
-              </ListItemDecorator>
-              <ListItemContent>User reports</ListItemContent>
-            </ListItemButton>
-          </ListItem>
-          <ListItem>
-            <ListItemButton>
-              <ListItemDecorator>
-                <i data-feather="settings" />
-              </ListItemDecorator>
-              <ListItemContent>Manage notifications</ListItemContent>
-            </ListItemButton>
-          </ListItem>
+          <SideBarListItem icon={<Home />} text={'Home'} onClick={() => {buttonHandler('/')}} />
+          <SideBarListItem icon={<HardDrive />} text={'My Projects'} onClick={() => {buttonHandler('/projects')}} />
+          <SideBarListItem icon={<Map/>} text={'My Travels'} onClick={() => {buttonHandler('/travels')}} />
+          <SideBarListItem icon={<Sunset/>} text={'Events'} onClick={() => {buttonHandler('/events')}} />
+          <SideBarListItem icon={<Headphones/>} text={'Music'} onClick={() => {buttonHandler('/music')}} />
+          <SideBarListItem icon={<Coffee/>} text={'Food & Drink'} onClick={() => {buttonHandler('/food-drink')}} />
+          <SideBarListItem icon={<Globe/>} text={'Language'} onClick={() => {buttonHandler('/travels')}} />
+          <SideBarListItem icon={<MoreHorizontal/>} text={'Miscellaneous'} onClick={() => {buttonHandler('/travels')}} />
         </List>
         <Box sx={{ pl: 1, mt: 'auto', display: 'flex', alignItems: 'center' }}>
           <div>

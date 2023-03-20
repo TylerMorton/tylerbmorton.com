@@ -11,6 +11,16 @@ export default function ColorSchemeToggle({
 }: IconButtonProps) {
   const { mode, setMode } = useColorScheme();
   const [mounted, setMounted] = React.useState(false);
+
+  const toggleMode = () => {
+    console.log(mode)
+    if (mode === 'light') {
+      setMode('dark');
+    } else {
+      setMode('light');
+    }
+  }
+
   React.useEffect(() => {
     setMounted(true);
   }, []);
@@ -29,18 +39,12 @@ export default function ColorSchemeToggle({
   return (
     <IconButton
       id="toggle-mode"
+      aria-label='toggle-mode'
       size="sm"
       variant="outlined"
       color="neutral"
       {...props}
-      onClick={(event) => {
-        if (mode === 'light') {
-          setMode('dark');
-        } else {
-          setMode('light');
-        }
-        onClick?.(event);
-      }}
+      onClick={toggleMode}
       sx={[
         {
           '& > *:first-child': {
