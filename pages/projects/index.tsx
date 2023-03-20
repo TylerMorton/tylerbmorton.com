@@ -4,16 +4,17 @@ import Head from 'next/head'
 
 // Joy UI Imports
 import Appbar from '@/components/Appbar';
-import { Box, CssBaseline, Typography } from '@mui/joy';
+import { Box, CssBaseline } from '@mui/joy';
 import Sidebar from '@/components/Sidebar';
 import { closeSidebar } from '@/components/common/sidebar';
 
 import Post from '../../types/Post';
+import { getPostInfoBySubject } from '@/lib/api';
+import HeroPost from '../../components/post_components/HeroPost';
 
 type Props = {
   projectPosts: Post[],
 }
-
 
 export default function Projects({ projectPosts }: Props) {
   React.useEffect(() => {
@@ -30,7 +31,42 @@ export default function Projects({ projectPosts }: Props) {
       <CssBaseline />
       <Appbar />
       <Sidebar />
-      <Typography mt={10}>Hello There Hello</Typography>
+      <Box
+      sx={(theme) => ({
+        mt: 5,
+        px: {
+          xs: 2,
+          md: 6,
+        },
+        py: { xs: `calc(${theme.spacing(0)} + var(--Header-height))` },
+        display: 'flex',
+        flexDirection: 'column',
+        minWidth: 0,
+        height: '100dvh',
+        gap: 1,
+      })}>
+        {projectPosts.map((post) => (
+          <HeroPost key={post.slug} {...post} />
+        ))}
+      </Box>
     </Box>
   )
+}
+
+export function getStaticProps() {
+  const posts = getPostInfoBySubject('projects', [
+    'title',
+    'date',
+    'slug',
+    'author',
+    'content',
+    'ogImage',
+    'coverImage',
+  ])
+  console.log(posts)
+  return {
+    props: {
+      projectPosts: posts
+    }
+  }
 }

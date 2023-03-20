@@ -47,7 +47,7 @@ export function getPostBySlug(slug: string, fields: string[]) {
 
 // Note: argument expects full path
 async function getPostBySlugPath(fullPath: string, fields: string[]) {
-  const slug = (fullPath.match(/[^\/]+?.md/) || [''])[0];
+  const slug = (fullPath.match(/[^/]+?.md/) || [''])[0];
   const realSlug = slug.replace(/\.md/, '');
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const {data, content} = matter(fileContents);
@@ -83,6 +83,31 @@ async function getPostBySlugPath(fullPath: string, fields: string[]) {
   }
 }
 
+async function getDataBySlugPath(fullPath: string, fields: string[]) {
+  const slug = (fullPath.match(/[^/]+?.md/) || [''])[0];
+  const realSlug = slug.replace(/\.md/, '');
+  const fileContents = fs.readFileSync(fullPath, 'utf8')
+  const {data, content} = matter(fileContents);
+  type Items = {
+    [key: string]: string
+  }
+
+  const items: Items = {}
+  fields.forEach((field) => {
+    if (field === 'slug') {
+      items[field] = realSlug
+    }
+    if (field === 'content') {
+      items[field] = content
+    }
+    console.log(data[field])
+    if (typeof data[field] !== 'undefined') {
+      items[field] = data[field]
+    }
+  })
+  return items;
+}
+
 export function getAllPosts(fields: string[]) {
   const slugPaths = getAllSlugPaths();
   const posts = slugPaths.map(async (slug) => await getPostBySlugPath(slug, fields));
@@ -92,6 +117,12 @@ export function getAllPosts(fields: string[]) {
 export function getPostBySubject(subject: subjectPost, fields: string[]) {
   const slugPaths = getSlugPathsBySubject(subject);
   const posts = slugPaths.map(async (slug) => await getPostBySlugPath(slug, fields));
+  return posts;
+}
+
+export function getPostInfoBySubject(subject: subjectPost, fields: string[]) {
+  const slugPaths = getSlugPathsBySubject(subject);
+  const posts = slugPaths.map((slug) => getDataBySlugPath(slug, fields));
   return posts;
 }
 

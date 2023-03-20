@@ -5,7 +5,6 @@ import { useColorScheme } from '@mui/joy/styles';
 import IconButton, { IconButtonProps } from '@mui/joy/IconButton';
 
 export default function ColorSchemeToggle({
-  onClick,
   sx,
   ...props
 }: IconButtonProps) {

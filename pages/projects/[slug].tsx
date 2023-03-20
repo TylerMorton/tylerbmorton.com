@@ -3,11 +3,9 @@ import ErrorPage from 'next/error'
 import { getPostBySlug, getSlugsBySubject } from '../../lib/api'
 import Head from 'next/head'
 import PostBody from '../../components/post_components/PostBody'
-import { CMS_NAME } from '../../lib/constants'
-import type PostType from '../../types/Post';
+//import { CMS_NAME } from '../../lib/constants'
 import { Box, CssBaseline, Typography } from '@mui/joy';
 import { MDXRemote } from 'next-mdx-remote'
-import Image from 'next/image';
 import Appbar from '../../components/Appbar'
 import Sidebar from '../../components/Sidebar'
 import PostTitle from '@/components/post_components/PostTitle'
@@ -16,18 +14,9 @@ const components = {
   p: PostBody,
 }
 
-type Props = {
-
-  /*
-  post: PostType
-  morePosts: PostType[]
-  preview?: boolean
-  */
-}
-
 export default function Post({source, frontMatter}) {
   const router = useRouter()
-  const title = `${frontMatter.title} | Next.js Blog Example with ${CMS_NAME}`
+  //const title = `${frontMatter.title} | Next.js Blog Example with ${CMS_NAME}`
   if (!router.isFallback && !frontMatter?.slug) {
     return <ErrorPage statusCode={404} />
   }
