@@ -22,51 +22,43 @@ type Props = {
 
 const HeroPost = ({
   title,
-  coverImage,
   date,
   excerpt,
   slug,
 }: Props) => {
 
+  console.log(excerpt)
   const handleClick = () => {
     Router.push(`${Router.pathname}/${slug}`);
   }
-
   return (
-    <Sheet onClick={handleClick} variant='outlined' sx={{display: 'flex',
-    alignItems:'center',
-    borderRadius: '25px',
-    overflow: 'hidden',
-    maxWidth: '800px',
-    flexDirection: 'column',
-    px: 4,
-    pt: 2,
-     }}>
-      <Box>
-        <Sheet
-            sx={{
-              mx: 2,
-              px: 3,
-              py: 2,
-            }}
-          >
-          <Typography level='h5'>
-              {title}
-          </Typography>
-          <Box>
-            <Typography>{date}</Typography>
-            {/*<DateFormatter dateString={date} />*/}
-          </Box>
-        </Sheet>
-        <Box>
-          <Typography>
-            {excerpt}
-          </Typography>
-          {/*<Avatar name={author.name} picture={author.picture} />*/}
-        </Box>
-      </Box>
-    </Sheet>
-  )
+      <Box sx={{ display: 'flex', alignItems: 'center' }}>
+      <Sheet
+      onClick={handleClick}
+        variant='outlined'
+        sx={{
+          width: '100',
+          mx: 'auto',
+          my: 1,
+          py: 3,
+          px: 2,
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 2,
+          borderRadius: 'sm',
+          boxShadow: 'lg',
+        }}
+      >
+        <Typography level='h4' component='h4'>
+          {title}
+        </Typography>
+        <Typography>{date}</Typography>
+        <Typography level='body1' component='h1'>
+        {excerpt} 
+        </Typography>
+      </Sheet>
+    </Box>
+  );
 }
 
 export default HeroPost

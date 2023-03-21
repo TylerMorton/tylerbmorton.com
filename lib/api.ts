@@ -91,6 +91,7 @@ function getDataBySlugPath(fullPath: string, fields: string[]) {
     [key: string]: string
   }
 
+  console.log(data);
   const items: Items = {}
   fields.forEach((field) => {
     if (field === 'slug') {

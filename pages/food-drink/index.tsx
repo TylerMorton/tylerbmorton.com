@@ -31,8 +31,8 @@ export default function Projects({ projectPosts }: Props) {
       </Head>
       <CssBaseline />
       <Appbar />
-      <Sidebar selected={'/projects'} />
-      <PostList title='Projects' posts={projectPosts}/>
+      <Sidebar selected={'/food-drink'} />
+      <PostList title='Food & Drink' posts={projectPosts}/>
     </Box>
   )
 }
