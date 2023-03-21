@@ -50,25 +50,22 @@ export default function Sidebar({selected}: Props) {
       <Sheet
         className="Sidebar"
         sx={{
-          position: {
-            xs: 'fixed',
-            lg: 'sticky',
-          },
+          position: 'sticky',
           transform: {
             xs: 'translateX(calc(100% * (var(--SideNavigation-slideIn, 0) - 1) + var(--SideNavigation-slideIn, 0) * var(--FirstSidebar-width, 0px)))',
-            lg: 'none',
+            md: 'none',
           },
           borderRight: '1px solid',
           borderColor: 'divider',
           transition: 'transform 0.4s',
           zIndex: 9999,
           height: '100dvh',
-          top: 0,
           p: 2,
           py: 3,
-          flexShrink: 0,
-          display: 'flex',
-
+          display: {
+            xs: 'none',
+            md: 'flex',
+          },
           flexDirection: 'column',
           gap: 2,
         }}

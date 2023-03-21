@@ -21,6 +21,7 @@ function HomeContent() {
           xs: 2,
           md: 6,
         },
+        overflowY: 'auto',
         py: { xs: `calc(${theme.spacing(0)} + var(--Header-height))` },
         flex: 1,
         display: 'flex',

@@ -12,6 +12,7 @@ import Post from '../../types/Post';
 import { getPostInfoBySubject } from '@/lib/api';
 import HeroPost from '../../components/post_components/HeroPost';
 import PostList from '@/components/post_components/PostList';
+import ApplicationMain from '@/components/ApplicationMain';
 
 type Props = {
   projectPosts: Post[],
@@ -31,8 +32,7 @@ export default function Projects({ projectPosts }: Props) {
       </Head>
       <CssBaseline />
       <Appbar />
-      <Sidebar selected={'/travels'} />
-      <PostList title='Music' posts={projectPosts}/>
+
     </Box>
   )
 }
