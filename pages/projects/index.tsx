@@ -11,6 +11,7 @@ import { closeSidebar } from '@/components/common/sidebar';
 import Post from '../../types/Post';
 import { getPostInfoBySubject } from '@/lib/api';
 import HeroPost from '../../components/post_components/HeroPost';
+import PostList from '@/components/post_components/PostList';
 
 type Props = {
   projectPosts: Post[],
@@ -30,25 +31,8 @@ export default function Projects({ projectPosts }: Props) {
       </Head>
       <CssBaseline />
       <Appbar />
-      <Sidebar />
-      <Box
-      sx={(theme) => ({
-        mt: 5,
-        px: {
-          xs: 2,
-          md: 6,
-        },
-        py: { xs: `calc(${theme.spacing(0)} + var(--Header-height))` },
-        display: 'flex',
-        flexDirection: 'column',
-        minWidth: 0,
-        height: '100dvh',
-        gap: 1,
-      })}>
-        {projectPosts.map((post) => (
-          <HeroPost key={post.slug} {...post} />
-        ))}
-      </Box>
+      <Sidebar selected={'/projects'} />
+      <PostList posts={projectPosts}/>
     </Box>
   )
 }
@@ -63,7 +47,6 @@ export function getStaticProps() {
     'ogImage',
     'coverImage',
   ])
-  console.log(posts)
   return {
     props: {
       projectPosts: posts

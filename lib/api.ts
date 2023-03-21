@@ -25,12 +25,12 @@ function getAllSlugPaths(): string[] {
   let subjectPath: string;
   for (const i of subjectDirs) {
     subjectPath = join(postPath, i)
-    slugs = slugs.concat(fs.readdirSync(subjectPath).map((spath) => join(subjectPath, spath)));
+    slugs = slugs.concat(
+      fs.readdirSync(subjectPath).map((spath) => join(subjectPath, spath))
+    );
   }
   return slugs;
 }
-
-
 
 function getSlugPathsBySubject(subject: subjectPost): string[] {
   const subjectPath = join(postPath, subject);
@@ -64,7 +64,6 @@ async function getPostBySlugPath(fullPath: string, fields: string[]) {
     if (field === 'content') {
       items[field] = content
     }
-    console.log(data[field])
     if (typeof data[field] !== 'undefined') {
       items[field] = data[field]
     }
@@ -83,7 +82,7 @@ async function getPostBySlugPath(fullPath: string, fields: string[]) {
   }
 }
 
-async function getDataBySlugPath(fullPath: string, fields: string[]) {
+function getDataBySlugPath(fullPath: string, fields: string[]) {
   const slug = (fullPath.match(/[^/]+?.md/) || [''])[0];
   const realSlug = slug.replace(/\.md/, '');
   const fileContents = fs.readFileSync(fullPath, 'utf8')
@@ -100,7 +99,6 @@ async function getDataBySlugPath(fullPath: string, fields: string[]) {
     if (field === 'content') {
       items[field] = content
     }
-    console.log(data[field])
     if (typeof data[field] !== 'undefined') {
       items[field] = data[field]
     }

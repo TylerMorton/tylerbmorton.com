@@ -1,8 +1,15 @@
 //import DateFormatter from './date-formatter'
 //import CoverImage from './cover-image'
-import type Author from '../../types/Author'
+
+// Mui Joy Imports
 import { Box, Sheet, Typography } from '@mui/joy'
 import Image from 'next/image'
+
+// Next Imports
+import Router from 'next/router'
+
+import type Author from '../../types/Author'
+
 
 type Props = {
   title: string
@@ -20,24 +27,21 @@ const HeroPost = ({
   excerpt,
   slug,
 }: Props) => {
-  console.log(coverImage);
+
+  const handleClick = () => {
+    Router.push(`${Router.pathname}/${slug}`);
+  }
+
   return (
-    <Sheet variant='outlined' sx={{display: 'flex',
+    <Sheet onClick={handleClick} variant='outlined' sx={{display: 'flex',
     alignItems:'center',
     borderRadius: '25px',
     overflow: 'hidden',
     maxWidth: '800px',
     flexDirection: 'column',
+    px: 4,
+    pt: 2,
      }}>
-      <Box sx={{mb: 2, overflow: 'hidden', position: 'relative'}}>
-        <Image 
-          src={coverImage}
-          alt={`coverImage-${slug}`}
-          width={1300}
-          height={630}
-        />
-        {/*<CoverImage title={title} src={coverImage} slug={slug} />*/}
-      </Box>
       <Box>
         <Sheet
             sx={{

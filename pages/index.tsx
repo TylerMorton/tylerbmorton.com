@@ -25,7 +25,7 @@ export default function Home() {
       </Head>
       <CssBaseline />
       <Appbar />
-      <Sidebar />
+      <Sidebar selected={'/'} />
       <HomeContent />
     </Box>
   )

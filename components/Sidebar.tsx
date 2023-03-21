@@ -14,10 +14,16 @@ import { closeSidebar } from './common/sidebar';
 
 import { Home, HardDrive, Map, Globe, Sunset, MoreHorizontal,  Headphones, Coffee } from 'react-feather';
 
+interface Props {
+  selected: string
+}
 
-
-export default function Sidebar() {
+export default function Sidebar({selected}: Props) {
   const buttonHandler = (str: string) => {
+    if (str === selected) {
+      closeSidebar();
+      return;
+    }
     Router.push(str);
   } 
   return (
@@ -46,7 +52,7 @@ export default function Sidebar() {
         sx={{
           position: {
             xs: 'fixed',
-            lg: 'fixed',
+            lg: 'sticky',
           },
           transform: {
             xs: 'translateX(calc(100% * (var(--SideNavigation-slideIn, 0) - 1) + var(--SideNavigation-slideIn, 0) * var(--FirstSidebar-width, 0px)))',
