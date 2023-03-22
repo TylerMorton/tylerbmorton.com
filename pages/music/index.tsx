@@ -5,15 +5,14 @@ import Head from 'next/head'
 // Joy UI Imports
 import Appbar from '@/components/Appbar';
 import { Box, CssBaseline } from '@mui/joy';
-import Sidebar from '@/components/Sidebar';
-import { closeSidebar } from '@/components/common/sidebar';
 
 import Post from '../../types/Post';
 import { getPostInfoBySubject } from '@/lib/api';
-import HeroPost from '../../components/post_components/HeroPost';
 import PostList from '@/components/post_components/PostList';
 import ApplicationMain from '@/components/ApplicationMain';
 import { SidebarContext } from '@/components/common/sidebar';
+import { Headphones } from 'react-feather';
+
 type Props = {
   projectPosts: Post[],
 }
@@ -34,7 +33,7 @@ export default function Projects({ projectPosts }: Props) {
       <CssBaseline />
       <Appbar />
       <ApplicationMain slug='music'>
-      <PostList title={'My Music'} posts={projectPosts} />
+      <PostList title={'My Music'} icon={<Headphones />} posts={projectPosts} />
       </ApplicationMain>
     </Box>
   )
@@ -51,7 +50,6 @@ export function getStaticProps() {
     'ogImage',
     'coverImage',
   ])
-  console.log(posts[0])
   return {
     props: {
       projectPosts: posts

@@ -10,6 +10,8 @@ import { SidebarContext } from '@/components/common/sidebar';
 import Post from '../../types/Post';
 import { getPostInfoBySubject } from '@/lib/api';
 import ApplicationMain from '@/components/ApplicationMain';
+import { Map } from 'react-feather';
+import PostList from '@/components/post_components/PostList';
 
 type Props = {
   projectPosts: Post[],
@@ -30,7 +32,9 @@ export default function Projects({ projectPosts }: Props) {
       </Head>
       <CssBaseline />
       <Appbar />
-      <ApplicationMain title={'My Travels'} slug='travels' posts={[]}/>
+      <ApplicationMain slug={'travels'}>
+        <PostList title={'My Travels'} icon={<Map size={'40px'}/>} posts={projectPosts}/>
+      </ApplicationMain>
     </Box>
   )
 }
@@ -46,7 +50,6 @@ export function getStaticProps() {
     'ogImage',
     'coverImage',
   ])
-  console.log(posts[0])
   return {
     props: {
       projectPosts: posts

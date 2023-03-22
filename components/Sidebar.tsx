@@ -19,9 +19,10 @@ interface Props {
 }
 
 export default function Sidebar({selected}: Props) {
-  const {sidebarToggle, closeSidebar} = React.useContext(SidebarContext);
+  const {closeSidebar} = React.useContext(SidebarContext);
   const buttonHandler = (str: string) => {
     if (str === selected) {
+      console.log('hit')
       closeSidebar();
       return;
     }
@@ -41,21 +42,15 @@ export default function Sidebar({selected}: Props) {
           bgcolor: 'background.body',
           opacity: 'calc(var(--SideNavigation-slideIn, 0) - 0.2)',
           transition: 'opacity 0.4s',
-          transform: {
-            xs: 'translateX(calc(100% * (var(--SideNavigation-slideIn, 0) - 1) + var(--SideNavigation-slideIn, 0) * var(--FirstSidebar-width, 0px)))',
-            lg: 'translateX(-100%)',
-          },
+          transform:'translateX(calc(100% * (var(--SideNavigation-slideIn, 0) - 1) + var(--SideNavigation-slideIn, 0) * var(--FirstSidebar-width, 0px)))',
         }}
         onClick={() => closeSidebar()}
       />
       <Sheet
         className="Sidebar"
         sx={{
-          position: 'sticky',
-          transform: {
-            xs: 'translateX(calc(100% * (var(--SideNavigation-slideIn, 0) - 1) + var(--SideNavigation-slideIn, 0) * var(--FirstSidebar-width, 0px)))',
-            md: 'none',
-          },
+          position: 'fixed',
+          transform: 'translateX(calc(100% * (var(--SideNavigation-slideIn, 0) - 1) + var(--SideNavigation-slideIn, 0) * var(--FirstSidebar-width, 0px)))',
           borderRight: '1px solid',
           borderColor: 'divider',
           transition: 'transform 0.4s',
@@ -63,15 +58,7 @@ export default function Sidebar({selected}: Props) {
           height: '100dvh',
           p: 2,
           py: 3,
-          overflow: 'hidden',
-          width: {
-            xs: sidebarToggle ? 'auto' : 0,
-            md: 'auto',
-          },
-          display: {
-            xs: 'flex',
-            md: 'flex',
-          },
+          display: 'flex',
           flexDirection: 'column',
           gap: 2,
         }}

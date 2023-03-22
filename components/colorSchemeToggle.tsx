@@ -12,7 +12,6 @@ export default function ColorSchemeToggle({
   const [mounted, setMounted] = React.useState(false);
 
   const toggleMode = () => {
-    console.log(mode)
     if (mode === 'light') {
       setMode('dark');
     } else {

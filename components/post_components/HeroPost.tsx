@@ -1,9 +1,7 @@
 //import DateFormatter from './date-formatter'
-//import CoverImage from './cover-image'
 
 // Mui Joy Imports
 import { Box, Sheet, Typography } from '@mui/joy'
-import Image from 'next/image'
 
 // Next Imports
 import Router from 'next/router'
@@ -27,7 +25,6 @@ const HeroPost = ({
   slug,
 }: Props) => {
 
-  console.log(excerpt)
   const handleClick = () => {
     Router.push(`${Router.pathname}/${slug}`);
   }

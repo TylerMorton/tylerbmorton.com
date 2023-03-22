@@ -51,7 +51,6 @@ export function getStaticProps() {
     'ogImage',
     'coverImage',
   ])
-  console.log(posts[0])
   return {
     props: {
       projectPosts: posts

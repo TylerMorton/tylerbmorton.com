@@ -69,11 +69,6 @@ async function getPostBySlugPath(fullPath: string, fields: string[]) {
     }
   })
   const mdxSource = await serialize(source, {
-    // Optionally pass remark/rehype plugins
-    mdxOptions: {
-      remarkPlugins: [],
-      rehypePlugins: [],
-    },
     scope: data,
   })
   return {
@@ -91,7 +86,6 @@ function getDataBySlugPath(fullPath: string, fields: string[]) {
     [key: string]: string
   }
 
-  console.log(data);
   const items: Items = {}
   fields.forEach((field) => {
     if (field === 'slug') {

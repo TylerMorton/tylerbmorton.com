@@ -12,6 +12,7 @@ import Post from '../../types/Post';
 import { getPostInfoBySubject } from '@/lib/api';
 import ApplicationMain from '@/components/ApplicationMain';
 import PostList from '@/components/post_components/PostList';
+import { Smile } from 'react-feather';
 type Props = {
   projectPosts: Post[],
 }
@@ -32,7 +33,7 @@ export default function Projects({ projectPosts }: Props) {
       <CssBaseline />
       <Appbar />
       <ApplicationMain slug='miscellaneous'>
-        <PostList title={'My Music'} posts={projectPosts} />
+        <PostList title={'Miscellaneous'} icon={<Smile />} posts={projectPosts} />
       </ApplicationMain>
     </Box>
   )
@@ -49,7 +50,6 @@ export function getStaticProps() {
     'ogImage',
     'coverImage',
   ])
-  console.log(posts[0])
   return {
     props: {
       projectPosts: posts

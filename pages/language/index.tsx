@@ -32,7 +32,7 @@ export default function Projects({ projectPosts }: Props) {
       <CssBaseline />
       <Appbar />
       <ApplicationMain slug='miscellaneous' >
-        <PostList title={'My Music'} posts={projectPosts} />
+        <PostList title={'Language'} posts={projectPosts} />
       </ApplicationMain>
     </Box>
   )
@@ -49,7 +49,6 @@ export function getStaticProps() {
     'ogImage',
     'coverImage',
   ])
-  console.log(posts[0])
   return {
     props: {
       projectPosts: posts

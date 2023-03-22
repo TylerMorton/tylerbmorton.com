@@ -1,8 +1,8 @@
 
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 // Joy UI Imports
-import { Box, Typography } from '@mui/joy';
+import { Box } from '@mui/joy';
 
 // Next Imports
 
@@ -15,17 +15,19 @@ import ListTitle from './ListTitle';
 
 interface Props {
   title: string
+  icon: ReactElement | undefined
   posts: Post[]
 }
 
-function PostList({title, posts}: Props) {
+function PostList({title, icon, posts}: Props) {
   return (
     <Box
       component='main'
       sx={(theme) => ({
         px: {
-          xs: 2,
-          md: 6,
+          xs: 4,
+          md: 12,
+          lg: 30,
         },
         py: { xs: `calc(${theme.spacing(0)} + var(--Header-height))` },
         flex: 1,
@@ -38,9 +40,9 @@ function PostList({title, posts}: Props) {
       })
       }
     >
-      <ListTitle text={title} />
+      <ListTitle icon={icon} text={title} />
       <Inspiration />
-      {posts.map((post) => (
+      {posts.sort((post, otherPost) => post.date > otherPost.date ? -1 : 1).map((post) => (
         <HeroPost key={post.slug} {...post} />
       ))}
       <Footer />

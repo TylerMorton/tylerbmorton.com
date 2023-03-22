@@ -2,9 +2,7 @@ import React from 'react';
 
 import { Box } from "@mui/system";
 
-import Post from "@/types/Post";
 import Sidebar from './Sidebar';
-import PostList from './post_components/PostList'
 
 interface Props {
   slug: string

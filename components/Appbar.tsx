@@ -3,16 +3,15 @@ import React from 'react';
 import ColorSchemeToggle from './colorSchemeToggle';
 import { Menu } from 'react-feather';
 import { SidebarContext } from './common/sidebar';
-
 function Appbar() {
-  const {openSidebar, closeSidebar} = React.useContext(SidebarContext)
+  const {openSidebar} = React.useContext(SidebarContext)
 
   return (
     <Sheet
       sx={{
         display: { xs: 'flex' },
         alignItems: 'center',
-        position: 'relative',
+        position: 'fixed',
         mb: 1,
         top: 0,
         width: '100vw',

@@ -12,15 +12,13 @@ import Bio from './text_contents/Bio';
 import Inspiration from './text_contents/Inspiration';
 import Footer from '../footer';
 
+
 function HomeContent() {
   return (
     <Box
       component='main'
       sx={(theme) => ({
-        px: {
-          xs: 2,
-          md: 6,
-        },
+        px: 0,
         overflowY: 'auto',
         py: { xs: `calc(${theme.spacing(0)} + var(--Header-height))` },
         flex: 1,
@@ -29,13 +27,37 @@ function HomeContent() {
         minWidth: 0,
         height: '100dvh',
         gap: 1,
+        overflowX: 'hidden'
       })
       }
     >
+      <Box sx={{
+        px: {
+          xs: 4,
+          md: 12,
+          lg: 30,
+        },
+      }}>
+
+      </Box>
       <Banner />
+      <Box sx={{
+        height: '100',
+        width: '100vw',
+        position: 'relative',
+        bgcolor: (theme) => theme.palette.background.body,
+        pt: 10,
+        px: {
+          xs: 4,
+          md: 12,
+          lg: 30,
+        },
+      }}>
+
       <Bio />
       <Inspiration />
       <Footer />
+      </Box>
     </Box>
   )
 }

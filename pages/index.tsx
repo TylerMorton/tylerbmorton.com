@@ -8,6 +8,8 @@ import { Box, CssBaseline } from '@mui/joy';
 import ApplicationMain from '@/components/ApplicationMain';
 import { SidebarContext } from '@/components/common/sidebar';
 import HomeContent from '@/components/home/HomeContent';
+import Image from 'next/image';
+import HomeImage from '../public/homepic.jpeg'
 
 export default function Home() {
   const {closeSidebar} = React.useContext(SidebarContext);
@@ -24,9 +26,29 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <CssBaseline />
+      <Box
+        sx={{
+          position: 'fixed',
+          height: '100vh',
+          width: '100vw',
+          overflow: 'hidden',
+          zIndex: -1,
+
+        }}
+      >
+      <Image
+        alt={'background-mountains'}
+        src={HomeImage}
+        fill
+        placeholder='blur'
+        objectFit='cover'
+        quality={100}
+      />
+
+      </Box>
       <Appbar />
       {/*<Sidebar selected={'/'} />*/}
-      <ApplicationMain slug={'/'} >
+      <ApplicationMain slug={''} >
         <HomeContent />
       </ApplicationMain>
     </Box>
