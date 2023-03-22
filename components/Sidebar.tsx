@@ -10,22 +10,23 @@ import SideBarListItem from './SideBarListItem';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
-import { closeSidebar } from './common/sidebar';
 
 import { Home, HardDrive, Map, Globe, Sunset, MoreHorizontal,  Headphones, Coffee } from 'react-feather';
+import { SidebarContext } from './common/sidebar';
 
 interface Props {
   selected: string
 }
 
 export default function Sidebar({selected}: Props) {
+  const {sidebarToggle, closeSidebar} = React.useContext(SidebarContext);
   const buttonHandler = (str: string) => {
     if (str === selected) {
       closeSidebar();
       return;
     }
     Router.push(str);
-  } 
+  }
   return (
     <>
       <Box
@@ -62,8 +63,13 @@ export default function Sidebar({selected}: Props) {
           height: '100dvh',
           p: 2,
           py: 3,
+          overflow: 'hidden',
+          width: {
+            xs: sidebarToggle ? 'auto' : 0,
+            md: 'auto',
+          },
           display: {
-            xs: 'none',
+            xs: 'flex',
             md: 'flex',
           },
           flexDirection: 'column',

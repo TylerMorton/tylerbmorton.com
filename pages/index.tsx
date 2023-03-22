@@ -3,15 +3,14 @@ import * as React from 'react';
 import Head from 'next/head'
 
 // Joy UI Imports
-import HomeContent from '@/components/home/HomeContent';
 import Appbar from '@/components/Appbar';
 import { Box, CssBaseline } from '@mui/joy';
-import Sidebar from '@/components/Sidebar';
-import { closeSidebar } from '@/components/common/sidebar';
 import ApplicationMain from '@/components/ApplicationMain';
-
+import { SidebarContext } from '@/components/common/sidebar';
+import HomeContent from '@/components/home/HomeContent';
 
 export default function Home() {
+  const {closeSidebar} = React.useContext(SidebarContext);
   React.useEffect(() => {
     closeSidebar();
   }, [])
@@ -27,8 +26,9 @@ export default function Home() {
       <CssBaseline />
       <Appbar />
       {/*<Sidebar selected={'/'} />*/}
-      <ApplicationMain title={''} posts={[]}/>
-      {/*<HomeContent />*/}
+      <ApplicationMain slug={'/'} >
+        <HomeContent />
+      </ApplicationMain>
     </Box>
   )
 }

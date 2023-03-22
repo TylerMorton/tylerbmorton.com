@@ -29,8 +29,10 @@ function Banner() {
         px: 2,
         display: 'flex',
         flexDirection: 'column',
+        height: '500px',
         gap: 2,
         borderRadius: 'sm',
+        justifyContent: 'center',
       }}
     >
       <Typography level='h2' component='h4' textAlign={'center'}>

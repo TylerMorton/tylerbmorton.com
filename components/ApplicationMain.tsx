@@ -7,15 +7,17 @@ import Sidebar from './Sidebar';
 import PostList from './post_components/PostList'
 
 interface Props {
-  title: string
-  posts: Post[]
+  slug: string
+  children: React.ReactElement | React.ReactElement[]
 }
 
-export default function ApplicationMain({title, posts}: Props) {
+export default function ApplicationMain({slug, children}: Props) {
   return (
-    <Box sx={{height:'100%', display: 'flex'}}>
-      <Sidebar selected={'/travels'} />
-      <PostList title='Music' posts={posts} />
+    <>
+      <Box sx={{height:'100%', display: 'flex'}}>
+      <Sidebar selected={`/${slug}`} />
+      {children}
     </Box>
+    </>
   );
 }

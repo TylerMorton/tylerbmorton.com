@@ -2,9 +2,11 @@ import { IconButton, Sheet, Typography } from '@mui/joy';
 import React from 'react';
 import ColorSchemeToggle from './colorSchemeToggle';
 import { Menu } from 'react-feather';
-import { openSidebar } from './common/sidebar';
+import { SidebarContext } from './common/sidebar';
 
 function Appbar() {
+  const {openSidebar, closeSidebar} = React.useContext(SidebarContext)
+
   return (
     <Sheet
       sx={{
