@@ -45,7 +45,7 @@ function HomeContent() {
         height: '100',
         width: '100vw',
         position: 'relative',
-        bgcolor: (theme) => theme.palette.background.body,
+        bgcolor: (theme) => theme.vars.palette.background.body,
         pt: 10,
         px: {
           xs: 4,

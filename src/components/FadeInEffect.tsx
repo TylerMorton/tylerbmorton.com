@@ -3,13 +3,14 @@ import React, { ReactElement } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import {fadeInDown} from 'react-animations';
-import { Box } from '@mui/system';
+import { Box } from '@mui/joy';
 
 const fadeAnimation = keyframes`${fadeInDown}`;
 
 
 const BouncyDiv = styled.div`
-    animation: 2s ${fadeAnimation};
+    animation: 1s ease ${fadeAnimation};
+    animation-timing-function: ease-in-out;
 `;
 
 interface Props {

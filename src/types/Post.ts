@@ -13,6 +13,10 @@ type PostType = {
   content: string
 }
 
+export type Items = {
+  [key: string]: string
+}
+
 export type subjectPost = 'projects' | 'events' | 'travels';
 
 export default PostType

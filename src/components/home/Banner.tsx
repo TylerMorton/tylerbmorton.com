@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Sheet, Typography } from '@mui/joy';
 import { TypeAnimation } from 'react-type-animation';
-import GlobalStyles from '@mui/joy';
+
 const scale = 10
 
 function timeSpecifier() {

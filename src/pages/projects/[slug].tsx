@@ -8,13 +8,20 @@ import { Box, CssBaseline, Typography } from '@mui/joy';
 import { MDXRemote } from 'next-mdx-remote'
 import Appbar from '../../components/Appbar'
 import Sidebar from '../../components/Sidebar'
-import PostTitle from '@/components/post_components/PostTitle'
+import PostTitle from '../../components/post_components/PostTitle'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+import { Items } from '../../types/Post'
 
 const components = {
   p: PostBody,
 }
 
-export default function Post({source, frontMatter}) {
+interface Props {
+  source: MDXRemoteSerializeResult<Record<string, unknown>>,
+  frontMatter: Items
+}
+
+export default function Post({source, frontMatter}: Props) {
   const router = useRouter()
   //const title = `${frontMatter.title} | Next.js Blog Example with ${CMS_NAME}`
   if (!router.isFallback && !frontMatter?.slug) {
@@ -30,7 +37,7 @@ export default function Post({source, frontMatter}) {
     </Head>
     <CssBaseline />
     <Appbar />
-    <Sidebar />
+    <Sidebar selected='' />
       {router.isFallback ? (
         <Typography>Loading...</Typography>
       ) : (

@@ -1,11 +1,11 @@
 import fs from 'fs';
 import {join} from 'path';
 import matter from 'gray-matter'
-import { subjectPost } from '@/types/Post';
+import { subjectPost, Items } from '../types/Post';
 import markdownToMdx from './markdownToMdx';
 import { serialize } from 'next-mdx-remote/serialize';
 
-const postPath = join(process.cwd(), '_posts')
+const postPath = join(process.cwd(), 'src', 'posts')
 const subject = ['projects', 'events', 'travels'];
 
 
@@ -52,9 +52,7 @@ async function getPostBySlugPath(fullPath: string, fields: string[]) {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const {data, content} = matter(fileContents);
   const source = await markdownToMdx(content);
-  type Items = {
-    [key: string]: string
-  }
+
 
   const items: Items = {}
   fields.forEach((field) => {

@@ -22,7 +22,6 @@ export default function Sidebar({selected}: Props) {
   const {closeSidebar} = React.useContext(SidebarContext);
   const buttonHandler = (str: string) => {
     if (str === selected) {
-      console.log('hit')
       closeSidebar();
       return;
     }

@@ -1,15 +1,16 @@
 import * as React from 'react';
 
 import Head from 'next/head'
+import Image from 'next/image';
 
 // Joy UI Imports
-import Appbar from '@/components/Appbar';
 import { Box, CssBaseline } from '@mui/joy';
-import ApplicationMain from '@/components/ApplicationMain';
-import { SidebarContext } from '@/components/common/sidebar';
-import HomeContent from '@/components/home/HomeContent';
-import Image from 'next/image';
-import HomeImage from '../public/homepic.jpeg'
+
+import HomeContent from '../components/home/HomeContent';
+import Appbar from '../components/Appbar';
+import ApplicationMain from '../components/ApplicationMain';
+import { SidebarContext } from '../components/common/sidebar';
+import HomeImage from '../../public/homepic.jpeg'
 
 export default function Home() {
   const {closeSidebar} = React.useContext(SidebarContext);
@@ -37,7 +38,7 @@ export default function Home() {
         }}
       >
       <Image
-        alt={'background-mountains'}
+        alt={'a nice evening image of berlin'}
         src={HomeImage}
         fill
         placeholder='blur'
