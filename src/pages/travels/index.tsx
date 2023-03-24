@@ -14,10 +14,10 @@ import { SidebarContext } from '../../components/common/sidebar';
 import { Map } from 'react-feather';
 
 type Props = {
-  projectPosts: Post[],
+  travelPosts: Post[],
 }
 
-export default function Projects({ projectPosts }: Props) {
+export default function Projects({ travelPosts }: Props) {
   const {closeSidebar} = React.useContext(SidebarContext);
   React.useEffect(() => {
     closeSidebar();
@@ -33,14 +33,14 @@ export default function Projects({ projectPosts }: Props) {
       <CssBaseline />
       <Appbar />
       <ApplicationMain slug={'travels'}>
-        <PostList title={'My Travels'} icon={<Map size={'40px'}/>} posts={projectPosts}/>
+        <PostList title={'My Travels'} icon={<Map size={'40px'}/>} posts={travelPosts}/>
       </ApplicationMain>
     </Box>
   )
 }
 
 export function getStaticProps() {
-  const posts = getPostInfoBySubject('projects', [
+  const posts = getPostInfoBySubject('travels', [
     'title',
     'date',
     'slug',
@@ -52,7 +52,7 @@ export function getStaticProps() {
   ])
   return {
     props: {
-      projectPosts: posts
+      travelPosts: posts
     }
   }
 }

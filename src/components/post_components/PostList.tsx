@@ -7,11 +7,11 @@ import { Box } from '@mui/joy';
 // Next Imports
 
 // Custom Imports
-import Inspiration from '../home/text_contents/Inspiration';
 import Footer from '../footer';
 import Post from '../../types/Post';
 import HeroPost from './HeroPost';
 import ListTitle from './ListTitle';
+import Empty from './Empty';
 
 interface Props {
   title: string
@@ -24,11 +24,7 @@ function PostList({title, icon, posts}: Props) {
     <Box
       component='main'
       sx={(theme) => ({
-        px: {
-          xs: 4,
-          md: 12,
-          lg: 30,
-        },
+
         py: { xs: `calc(${theme.spacing(0)} + var(--Header-height))` },
         flex: 1,
         display: 'flex',
@@ -40,11 +36,26 @@ function PostList({title, icon, posts}: Props) {
       })
       }
     >
+      <Box sx={{
+        px: {
+          xs: 4,
+          md: 12,
+          lg: 30,
+        },
+      }}>
+
       <ListTitle icon={icon} text={title} />
-      <Inspiration />
-      {posts.sort((post, otherPost) => post.date > otherPost.date ? -1 : 1).map((post) => (
+      <Box sx={{
+        minHeight: '500px',
+      }}>
+      { posts.length !== 0 ? 
+      posts.sort((post, otherPost) => post.date > otherPost.date ? -1 : 1).map((post) => (
         <HeroPost key={post.slug} {...post} />
-      ))}
+      ))
+      : <Empty />
+    }
+      </Box>
+      </Box>
       <Footer />
     </Box>
   )

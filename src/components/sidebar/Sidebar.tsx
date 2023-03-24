@@ -12,7 +12,7 @@ import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 
 import { Home, HardDrive, Map, Globe, Sunset, MoreHorizontal,  Headphones, Coffee } from 'react-feather';
-import { SidebarContext } from './common/sidebar';
+import { SidebarContext } from '../common/sidebar';
 
 interface Props {
   selected: string
@@ -72,14 +72,14 @@ export default function Sidebar({selected}: Props) {
           <ListSubheader role="presentation" sx={{ color: 'text.primary' }}>
             Menu
           </ListSubheader>
-          <SideBarListItem icon={<Home />} text={'Home'} onClick={() => {buttonHandler('/')}} />
-          <SideBarListItem icon={<HardDrive />} text={'My Projects'} onClick={() => {buttonHandler('/projects')}} />
-          <SideBarListItem icon={<Map/>} text={'My Travels'} onClick={() => {buttonHandler('/travels')}} />
-          <SideBarListItem icon={<Sunset/>} text={'Events'} onClick={() => {buttonHandler('/events')}} />
-          <SideBarListItem icon={<Headphones/>} text={'Music'} onClick={() => {buttonHandler('/music')}} />
-          <SideBarListItem icon={<Coffee/>} text={'Food & Drink'} onClick={() => {buttonHandler('/food-drink')}} />
-          <SideBarListItem icon={<Globe/>} text={'Language'} onClick={() => {buttonHandler('/travels')}} />
-          <SideBarListItem icon={<MoreHorizontal/>} text={'Miscellaneous'} onClick={() => {buttonHandler('/travels')}} />
+          <SideBarListItem select={selected === '/'} icon={<Home />} text={'Home'} onClick={() => {buttonHandler('/')}} />
+          <SideBarListItem select={selected === '/projects'} icon={<HardDrive />} text={'My Projects'} onClick={() => {buttonHandler('/projects')}} />
+          <SideBarListItem select={selected === '/travels'} icon={<Map/>} text={'My Travels'} onClick={() => {buttonHandler('/travels')}} />
+          <SideBarListItem select={selected === '/events'} icon={<Sunset/>} text={'Events'} onClick={() => {buttonHandler('/events')}} />
+          <SideBarListItem select={selected === '/music'} icon={<Headphones/>} text={'Music'} onClick={() => {buttonHandler('/music')}} />
+          <SideBarListItem select={selected === '/food-drink'} icon={<Coffee/>} text={'Food & Drink'} onClick={() => {buttonHandler('/food-drink')}} />
+          <SideBarListItem select={selected === '/language'} icon={<Globe/>} text={'Language'} onClick={() => {buttonHandler('/language')}} />
+          <SideBarListItem select={selected === 'miscellaneous'} icon={<MoreHorizontal/>} text={'Miscellaneous'} onClick={() => {buttonHandler('/miscellaneous')}} />
         </List>
         <Box sx={{ pl: 1, mt: 'auto', display: 'flex', alignItems: 'center' }}>
           <div>

@@ -10,10 +10,26 @@ ogImage:
   url: '/assets/blog/hello-world/cover.jpg'
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.
+Following in the footsteps of many, many other developers I decided it was time to build a website to share my projects, research and life events.
 
-Venenatis cras sed felis eget velit. Consectetur libero id faucibus nisl tincidunt. Gravida in fermentum et sollicitudin ac orci phasellus egestas tellus. Volutpat consequat mauris nunc congue nisi vitae. Id aliquet risus feugiat in ante metus dictum at tempor. Sed blandit libero volutpat sed cras. Sed odio morbi quis commodo odio aenean sed adipiscing. Velit euismod in pellentesque massa placerat. Mi bibendum neque egestas congue quisque egestas diam in arcu. Nisi lacus sed viverra tellus in. Nibh cras pulvinar mattis nunc sed. Luctus accumsan tortor posuere ac ut consequat semper viverra. Fringilla ut morbi tincidunt augue interdum velit euismod.
+## Design stage
+I didn't spend too much time designing the site, apart from the basics.
+Since my site is following the blog structure I wouldn't have to set up a fancy database or api and keep most things static.
+For the site a feature I really wanted to push was a local folder structure which contained all the blog posts, articles, etc. as markdown files from which the site could scrape all the data it would need. For the UI design I wanted to keep it simple with a top navigation bar, sliding sidebar, and main content scroll.
 
-## Lorem Ipsum
+## Stack used
+- Runtime environemnt: Node.js
+- Frontend framework: React Typescript / Next.js
+- Frontend Component library: Mui Joy
+- Backend: static Markdown files (Remark / MDX)
 
-Tristique senectus et netus et malesuada fames ac turpis. Ridiculous mus mauris vitae ultricies leo integer malesuada nunc vel. In mollis nunc sed id semper. Egestas tellus rutrum tellus pellentesque. Phasellus vestibulum lorem sed risus ultricies tristique nulla. Quis blandit turpis cursus in hac habitasse platea dictumst quisque. Eros donec ac odio tempor orci dapibus ultrices. Aliquam sem et tortor consequat id porta nibh. Adipiscing elit duis tristique sollicitudin nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia at quis risus sed vulputate.
+## Development stage
+I began development with a default next.js app, and installed necessary tools such as:
+  - Remark & MDX, for reading markdown data/content.
+  - Mui Joy: component library with a great styling system
+Being someone who has lot's of trouble with frontend I started with a base site template from Mui Joy's template selection. With a base setup I then began to deconstruct the template to remove extraneous features.
+With a basic app. I went to work adding dark/light mode, Background Image using Next.js's Image Optimization feature, and creating static pages based off of the markdown files. I would continue basic development practices to meet my minimum viable product, beautify, and refactor/optimize.
+
+## Things I did wrong
+
+## What I learned

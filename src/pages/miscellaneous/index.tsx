@@ -10,17 +10,18 @@ import { Smile } from 'react-feather';
 // Custom Imports
 import Appbar from '../../components/Appbar';
 import { SidebarContext } from '../../components/common/sidebar';
-import Post from '../../types/Post';
+//import Post from '../../types/Post';
 import { getPostInfoBySubject } from '../../lib/api';
 import ApplicationMain from '../../components/ApplicationMain';
-import PostList from '../../components/post_components/PostList';
-
+//import PostList from '../../components/post_components/PostList';
+import Construction from '../../components/post_components/Construction';
+/*
 type Props = {
   projectPosts: Post[],
 }
+*/
 
-
-export default function Projects({ projectPosts }: Props) {
+export default function Projects(/*{ projectPosts }: Props*/) {
   const { closeSidebar } = React.useContext(SidebarContext);
   React.useEffect(() => {
     closeSidebar();
@@ -36,7 +37,8 @@ export default function Projects({ projectPosts }: Props) {
       <CssBaseline />
       <Appbar />
       <ApplicationMain slug='miscellaneous'>
-        <PostList title={'Miscellaneous'} icon={<Smile />} posts={projectPosts} />
+        { /*<PostList title={'Miscellaneous'} icon={<Smile />} posts={projectPosts} />*/}
+        <Construction title={'Miscellaneous'} icon={<Smile />} />
       </ApplicationMain>
     </Box>
   )

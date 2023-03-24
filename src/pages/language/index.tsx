@@ -7,17 +7,19 @@ import { Box, CssBaseline } from '@mui/joy';
 
 
 import Appbar from '../../components/Appbar';
-import PostList from '../../components/post_components/PostList';
-import Post from '../../types/Post';
+//import PostList from '../../components/post_components/PostList';
+//import Post from '../../types/Post';
 import { getPostInfoBySubject } from '../../lib/api';
 import ApplicationMain from '../../components/ApplicationMain';
 import { SidebarContext } from '../../components/common/sidebar';
 import { Globe } from 'react-feather';
+import Construction from '@/src/components/post_components/Construction';
+/*
 type Props = {
   projectPosts: Post[],
-}
+}*/
 
-export default function Projects({ projectPosts }: Props) {
+export default function Projects(/*{ projectPosts }: Props*/) {
   const {closeSidebar} = React.useContext(SidebarContext);
   React.useEffect(() => {
     closeSidebar();
@@ -33,7 +35,8 @@ export default function Projects({ projectPosts }: Props) {
       <CssBaseline />
       <Appbar />
       <ApplicationMain slug='miscellaneous' >
-        <PostList title={'Language'} icon={<Globe />} posts={projectPosts} />
+        {/*<PostList title={'Language'} icon={<Globe />} posts={projectPosts} />*/}
+        <Construction title={'Language'} icon={<Globe />} />
       </ApplicationMain>
     </Box>
   )

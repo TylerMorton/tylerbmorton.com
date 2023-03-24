@@ -26,7 +26,7 @@ function HomeContent() {
         flexDirection: 'column',
         minWidth: 0,
         height: '100dvh',
-        gap: 1,
+        gap: 0,
         overflowX: 'hidden'
       })
       }
@@ -56,8 +56,8 @@ function HomeContent() {
 
       <Bio />
       <Inspiration />
-      <Footer />
       </Box>
+      <Footer />
     </Box>
   )
 }

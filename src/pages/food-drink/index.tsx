@@ -6,19 +6,20 @@ import Head from 'next/head'
 import { Box, CssBaseline } from '@mui/joy';
 
 // Custom Imports
-import Post from '../../types/Post';
+//import Post from '../../types/Post';
 import Appbar from '../../components/Appbar';
-import PostList from '../../components/post_components/PostList';
+//import PostList from '../../components/post_components/PostList';
 import { getPostInfoBySubject } from '../../lib/api';
 import ApplicationMain from '../../components/ApplicationMain';
 import { SidebarContext } from '../../components/common/sidebar';
 import { Coffee } from 'react-feather';
-
+import Construction from '@/src/components/post_components/Construction';
+/*
 type Props = {
   projectPosts: Post[],
-}
+}*/
 
-export default function Projects({ projectPosts }: Props) {
+export default function Projects(/*{ projectPosts }: Props*/) {
   const {closeSidebar} = React.useContext(SidebarContext);
   React.useEffect(() => {
     closeSidebar();
@@ -34,7 +35,8 @@ export default function Projects({ projectPosts }: Props) {
       <CssBaseline />
       <Appbar />
       <ApplicationMain  slug='food-drink' >
-        <PostList title={'Food & Drink'} icon={<Coffee />} posts={projectPosts} />
+        {/*<PostList title={'Food & Drink'} icon={<Coffee />} posts={projectPosts} />*/}
+        <Construction title={'Food & Drink'} icon={<Coffee />} />
       </ApplicationMain>
     </Box>
   )

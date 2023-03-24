@@ -4,14 +4,15 @@ import { ListItem, ListItemButton, ListItemDecorator, ListItemContent } from '@m
 interface Props {
   icon: ReactElement,
   text: string,
+  select: boolean,
   onClick: React.MouseEventHandler<HTMLAnchorElement> | undefined
 }
 
 
-export default function SideBarListItem({icon, text, onClick}: Props) {
+export default function SideBarListItem({icon, text, select, onClick}: Props) {
   return (
     <ListItem>
-      <ListItemButton onClick={onClick}>
+      <ListItemButton selected={select} onClick={onClick}>
         <ListItemDecorator>
           {icon}
         </ListItemDecorator>

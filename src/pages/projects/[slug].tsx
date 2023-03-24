@@ -7,7 +7,7 @@ import PostBody from '../../components/post_components/PostBody'
 import { Box, CssBaseline, Typography } from '@mui/joy';
 import { MDXRemote } from 'next-mdx-remote'
 import Appbar from '../../components/Appbar'
-import Sidebar from '../../components/Sidebar'
+import Sidebar from '../../components/sidebar/Sidebar'
 import PostTitle from '../../components/post_components/PostTitle'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { Items } from '../../types/Post'
