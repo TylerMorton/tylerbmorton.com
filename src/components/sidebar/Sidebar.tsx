@@ -11,7 +11,9 @@ import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import Sheet from '@mui/joy/Sheet';
 
-import { Home, HardDrive, Map, Globe, Sunset, MoreHorizontal,  Headphones, Coffee } from 'react-feather';
+// Feather Imports
+import { Home, HardDrive, Map, Globe, Sunset, MoreHorizontal,  Headphones, Coffee, Filter } from 'react-feather';
+
 import { SidebarContext } from '../common/sidebar';
 
 interface Props {
@@ -74,10 +76,11 @@ export default function Sidebar({selected}: Props) {
           </ListSubheader>
           <SideBarListItem select={selected === '/'} icon={<Home />} text={'Home'} onClick={() => {buttonHandler('/')}} />
           <SideBarListItem select={selected === '/projects'} icon={<HardDrive />} text={'My Projects'} onClick={() => {buttonHandler('/projects')}} />
+          <SideBarListItem select={selected === '/research'} icon={<Filter/>} text={'Research'} onClick={() => {buttonHandler('/research')}} />
           <SideBarListItem select={selected === '/travels'} icon={<Map/>} text={'My Travels'} onClick={() => {buttonHandler('/travels')}} />
           <SideBarListItem select={selected === '/events'} icon={<Sunset/>} text={'Events'} onClick={() => {buttonHandler('/events')}} />
-          <SideBarListItem select={selected === '/music'} icon={<Headphones/>} text={'Music'} onClick={() => {buttonHandler('/music')}} />
           <SideBarListItem select={selected === '/food-drink'} icon={<Coffee/>} text={'Food & Drink'} onClick={() => {buttonHandler('/food-drink')}} />
+          <SideBarListItem select={selected === '/music'} icon={<Headphones/>} text={'Music'} onClick={() => {buttonHandler('/music')}} />
           <SideBarListItem select={selected === '/language'} icon={<Globe/>} text={'Language'} onClick={() => {buttonHandler('/language')}} />
           <SideBarListItem select={selected === '/miscellaneous'} icon={<MoreHorizontal/>} text={'Miscellaneous'} onClick={() => {buttonHandler('/miscellaneous')}} />
         </List>

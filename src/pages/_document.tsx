@@ -7,7 +7,7 @@ export default function Document() {
     <Html  style={{overscrollBehavior: 'none'}} lang="en">
       <Head />
       <body>
-      {getInitColorSchemeScript({ defaultMode: 'system' })}
+      {getInitColorSchemeScript({ defaultMode: 'dark' })}
         <Main/>
         <NextScript />
       </body>

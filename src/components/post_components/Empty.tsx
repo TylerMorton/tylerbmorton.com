@@ -26,6 +26,7 @@ const Empty = () => {
         <Image 
         src="https://media.tenor.com/K_pqwjmutJ0AAAAC/empty-roll.gif"
         alt="gif of tumbleweed"
+        priority
         fill
         object-fit="cover"
         />

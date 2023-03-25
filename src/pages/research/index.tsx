@@ -3,7 +3,7 @@ import * as React from 'react';
 // Joy UI Imports
 import { Box, CssBaseline } from '@mui/joy';
 
-import { Headphones } from 'react-feather';
+import { Filter } from 'react-feather';
 
 import Appbar from '../../components/Appbar';
 //import PostList from '../../components/post_components/PostList';
@@ -30,9 +30,9 @@ export default function Projects(/*{ projectPosts }: Props*/) {
       <Header />
       <CssBaseline />
       <Appbar />
-      <ApplicationMain slug='music'>
+      <ApplicationMain slug='research'>
       {/*<PostList title={'My Music'} icon={<Headphones />} posts={projectPosts} />*/}
-      <Construction title={'My Music'} icon={<Headphones />} />
+      <Construction title={'My Research'} icon={<Filter />} />
       </ApplicationMain>
     </Box>
   )

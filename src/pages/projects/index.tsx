@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import Head from 'next/head'
-
 // Joy UI Imports
 import { Box, CssBaseline } from '@mui/joy';
 

@@ -6,14 +6,15 @@ import ErrorPage from 'next/error'
 // Mui Joy Imports
 import { Box, CssBaseline, Typography } from '@mui/joy';
 
+// MDX Imports
+import { MDXRemote } from 'next-mdx-remote'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
+
 import { getPostBySlug, getSlugsBySubject } from '../../lib/api'
 import PostBody from '../../components/post_components/PostBody'
-//import { CMS_NAME } from '../../lib/constants'
-import { MDXRemote } from 'next-mdx-remote'
 import Appbar from '../../components/Appbar'
 import Sidebar from '../../components/sidebar/Sidebar'
 import PostTitle from '../../components/post_components/PostTitle'
-import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { Items } from '../../types/Post'
 import Header from '../../components/Head';
 
@@ -26,12 +27,14 @@ interface Props {
   frontMatter: Items
 }
 
+
 export default function Post({source, frontMatter}: Props) {
   const router = useRouter()
   //const title = `${frontMatter.title} | Next.js Blog Example with ${CMS_NAME}`
   if (!router.isFallback && !frontMatter?.slug) {
     return <ErrorPage statusCode={404} />
   }
+
   return (
     <Box sx={{ display: 'flex', height: '100dvh'}}>
     <Header />

@@ -1,12 +1,17 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
 
 import React from 'react';
+import '../styles/globals.css'
 
+// Next Imports
+import type { AppProps } from 'next/app'
+
+// Mui Joy Imports
 import { CssVarsProvider, extendTheme } from '@mui/joy'
+
 import { SidebarContext } from '../components/common/sidebar'
 import { openSidebar as oSidebar } from '../components/common/sidebar';
 import { closeSidebar as cSidebar } from '../components/common/sidebar';
+
 
 export default function App({ Component, pageProps }: AppProps) {
   React.useContext(SidebarContext);
