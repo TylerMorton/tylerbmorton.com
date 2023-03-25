@@ -16,14 +16,15 @@ function Footer() {
       borderColor: 'divider',
       my: 3,
       py: 2,
-      px: 10,
-        display: 'flex'
+      display: 'flex'
       }}
       >
-      <Typography component={'h2'} level='h5' sx={{mr: 'auto', display: 'flex', alignItems:'center', textAlign: 'center'}}>
+      <Typography component={'h3'} level='h5' sx={{mr: 'auto', p: 2, display: 'flex', alignItems:'center', textAlign: 'center'}}>
       Site Developed By Tyler Morton
       </Typography>
+      <Box sx={{p:2, display: 'flex', alignItems: 'center',}}>
       <Socials />
+      </Box>
       </Box>
       <Copyright />
     </Box>

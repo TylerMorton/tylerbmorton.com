@@ -24,11 +24,14 @@ For the site a feature I really wanted to push was a local folder structure whic
 - Backend: static Markdown files (Remark / MDX)
 
 ## Development stage
-I began development with a default next.js app, and installed necessary tools such as:
+I began development with a default next.js app, and installed necessary tools:
   - Remark & MDX, for reading markdown data/content.
-  - Mui Joy: component library with a great styling system
-Being someone who has lot's of trouble with frontend I started with a base site template from Mui Joy's template selection. With a base setup I then began to deconstruct the template to remove extraneous features.
-With a basic app. I went to work adding dark/light mode, Background Image using Next.js's Image Optimization feature, and creating static pages based off of the markdown files. I would continue basic development practices to meet my minimum viable product, beautify, and refactor/optimize.
+  - Mui Joy: component library with a great styling system.
+  - React-animations: To spice up the site ;)
+
+Being someone who has lot's of trouble with frontend I started with boilerplate from Mui Joy's great selection of templates. With a base setup I then began to to remove extraneous features. I then went to work adding dark/light mode, Background Image using Next.js's Image Optimization feature, and creating static pages based off of the markdown files. I would continue basic development practices to meet my minimum viable product, beautify the UI, and optimize the performance of the site. Having a decent minimum viable product I began to decide I was going to deploy the site. I have never deployed a site before and was a great learning experience (a.k.a I spend hours learning about tools that I never ended up using for this project). I originally attempted to 
+
+## Deployment
 
 ## Things I did wrong
 

@@ -50,9 +50,17 @@ const Construction = ({ title, icon }: Props) => {
               gap: 2,
             }}
           >
-            <Typography level='h4' component='h4'>
-              🚧 This page is under construction. 🚧
+            <Box sx={{display: 'flex', alignItems: 'center', gap: 2,}}>
+            <Typography level='h5' component='h4' textAlign={'center'}>
+              🚧
             </Typography>
+            <Typography level='h5' component='h4' textAlign={'center'}>
+              This page is under construction.
+            </Typography>
+            <Typography level='h5' component='h4' textAlign={'center'}>
+              🚧
+            </Typography>
+            </Box>
             <Box sx={{ m: 5, p: 2, position: 'relative', overflow: 'hidden' }} height='300px'>
               <Image
                 src="https://media.tenor.com/jLsO-lqGCk0AAAAC/construction-worker.gif"
