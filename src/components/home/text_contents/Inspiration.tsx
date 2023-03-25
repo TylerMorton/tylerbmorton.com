@@ -10,8 +10,9 @@ function Inspiration() {
         width: '100',
         mx: 'auto',
         my: 1,
-        py: 3,
-        px: 2,
+        pt: 3,
+        pb: 5,
+        px: 6,
         display: 'flex',
         flexDirection: 'column',
         gap: 2,
@@ -19,7 +20,7 @@ function Inspiration() {
         boxShadow: 'lg',
       }}
     >
-      <Typography level='h4' component='h4'>
+      <Typography level='h4' component='h4' textAlign={'center'}>
         Inspiration for the site
       </Typography>
       <Typography level='body1' component='h1'>

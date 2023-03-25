@@ -10,13 +10,31 @@ export default function Socials() {
       display: 'flex',
       gap: '7px',
     }}>
-      <IconButton component={Link} href="https://github.com/TylerMorton" passHref={true}>
+      <IconButton 
+        aria-label='my github'
+        color='neutral'
+        sx={{"&:hover": {color: '#58ab5a'}}}
+        variant='outlined' component={Link}
+        href="https://github.com/TylerMorton"
+        passHref={true}>
         <GitHub />
       </IconButton>
-      <IconButton component={Link} href="https://www.linkedin.com/in/tyler-b-morton/" passHref={true}>
+      <IconButton 
+        aria-label='my linkedin'
+      color='neutral'
+      sx={{"&:hover": {color: '#0a66c2'}}}
+      variant='outlined'
+      component={Link}
+      href="https://www.linkedin.com/in/tyler-b-morton/" passHref={true}>
         <Linkedin />
       </IconButton>
-      <IconButton component={Link} href="/resume" >
+      <IconButton 
+        aria-label='my resume'
+      color='neutral'
+      sx={{"&:hover": {color: 'pink'}}}
+      variant='outlined'
+      component={Link}
+      href="/resume" >
         <FileText />
       </IconButton>
     </Box>

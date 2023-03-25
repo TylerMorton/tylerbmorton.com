@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, Typography } from '@mui/joy';
+import { Link as MuiLink, Typography } from '@mui/joy';
+import Link from 'next/link';
 
 
 function Copyright() {
@@ -7,9 +8,9 @@ function Copyright() {
     <>
     <Typography  level='body1' component='p' textAlign={'center'}>
       {`Copyright © `}
-      <Link href="link">
+      <MuiLink component={Link} href="mailto:tbmorton@ucsc.edu" passHref={true}>
         Tyler Morton
-      </Link>
+      </MuiLink>
       {` ${new Date().getFullYear()}.`}
     </Typography>
     </>

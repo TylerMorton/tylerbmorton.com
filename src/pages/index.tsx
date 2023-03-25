@@ -38,12 +38,13 @@ export default function Home() {
         }}
       >
       <Image
+        priority={true}
         alt={'a nice evening image of berlin'}
         src={HomeImage}
         fill
         placeholder='blur'
         objectFit='cover'
-        quality={100}
+        quality={75}
       />
 
       </Box>

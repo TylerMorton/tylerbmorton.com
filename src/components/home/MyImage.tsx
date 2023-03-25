@@ -29,7 +29,7 @@ function MyImage() {
         borderRadius: '50%',
       }}>
         <Image
-          src='https://source.unsplash.com/random?portrait'
+          src='/Profile_pic.jpeg'
           alt='Picture of me.'
           fill
           object-fit='contain'

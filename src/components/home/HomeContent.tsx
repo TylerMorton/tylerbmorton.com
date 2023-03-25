@@ -53,7 +53,6 @@ function HomeContent() {
           lg: 30,
         },
       }}>
-
       <Bio />
       <Inspiration />
       </Box>

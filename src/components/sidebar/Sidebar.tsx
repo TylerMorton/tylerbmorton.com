@@ -79,7 +79,7 @@ export default function Sidebar({selected}: Props) {
           <SideBarListItem select={selected === '/music'} icon={<Headphones/>} text={'Music'} onClick={() => {buttonHandler('/music')}} />
           <SideBarListItem select={selected === '/food-drink'} icon={<Coffee/>} text={'Food & Drink'} onClick={() => {buttonHandler('/food-drink')}} />
           <SideBarListItem select={selected === '/language'} icon={<Globe/>} text={'Language'} onClick={() => {buttonHandler('/language')}} />
-          <SideBarListItem select={selected === 'miscellaneous'} icon={<MoreHorizontal/>} text={'Miscellaneous'} onClick={() => {buttonHandler('/miscellaneous')}} />
+          <SideBarListItem select={selected === '/miscellaneous'} icon={<MoreHorizontal/>} text={'Miscellaneous'} onClick={() => {buttonHandler('/miscellaneous')}} />
         </List>
         <Box sx={{ pl: 1, mt: 'auto', display: 'flex', alignItems: 'center' }}>
           <div>

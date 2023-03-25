@@ -3,6 +3,7 @@ import React from 'react';
 import ColorSchemeToggle from './colorSchemeToggle';
 import { Menu } from 'react-feather';
 import { SidebarContext } from './common/sidebar';
+import Socials from './Socials';
 function Appbar() {
   const {openSidebar} = React.useContext(SidebarContext)
 
@@ -38,6 +39,7 @@ function Appbar() {
         sx={{ mr: 'auto', ml: 1 }}>
         TM
       </Typography>
+      <Socials />
       <ColorSchemeToggle />
     </Sheet>
   );

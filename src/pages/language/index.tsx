@@ -34,7 +34,7 @@ export default function Projects(/*{ projectPosts }: Props*/) {
       </Head>
       <CssBaseline />
       <Appbar />
-      <ApplicationMain slug='miscellaneous' >
+      <ApplicationMain slug='language' >
         {/*<PostList title={'Language'} icon={<Globe />} posts={projectPosts} />*/}
         <Construction title={'Language'} icon={<Globe />} />
       </ApplicationMain>
