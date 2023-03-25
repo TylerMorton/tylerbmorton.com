@@ -52,9 +52,8 @@ async function getPostBySlugPath(fullPath: string, fields: string[]) {
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const {data, content} = matter(fileContents);
   const source = await markdownToMdx(content);
-
-
   const items: Items = {}
+
   fields.forEach((field) => {
     if (field === 'slug') {
       items[field] = realSlug
