@@ -11,7 +11,8 @@ import { getPostInfoBySubject } from '../../lib/api';
 import ApplicationMain from '../../components/ApplicationMain';
 import { SidebarContext } from '../../components/common/sidebar';
 import { Map } from 'react-feather';
-import Header from '../..components/Head';
+
+import Header from '../../components/Head';
 
 type Props = {
   travelPosts: Post[],
