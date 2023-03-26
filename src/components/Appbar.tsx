@@ -36,6 +36,7 @@ function Appbar() {
         component={'h4'}
         level='h4'
         color='primary'
+        aria-label='Logo'
         sx={{ mr: 'auto', ml: 1 }}>
         TM
       </Typography>

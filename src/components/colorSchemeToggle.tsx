@@ -27,6 +27,7 @@ export default function ColorSchemeToggle({
       <IconButton
         size="sm"
         variant="outlined"
+        aria-label='toggle-mode'
         color="neutral"
         {...props}
         sx={sx}

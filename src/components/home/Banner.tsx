@@ -1,31 +1,26 @@
 import React from 'react';
 import { Box, Sheet, Typography } from '@mui/joy';
 import { TypeAnimation } from 'react-type-animation';
+import { ArrowDown } from 'react-feather';
+import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
+import { bounceIn } from 'react-animations';
+const bounceAnimation = keyframes`${bounceIn}`;
 
-const scale = 10
+const BounceDiv = styled.div`
+    animation: 3s ease ${bounceAnimation};
+    animation-iteration-count: infinite;`;
 
-function timeSpecifier() {
-  const date = new Date();
-  const hour = date.getHours();
-  if (hour >= 7 && hour < 5) {
-    return 'night';
-  }
-  if (hour >= 5 && hour < 12) {
-    return 'morning';
-  }
-  if (hour >= 12 && hour < 3) {
-    return 'afternoon';
-  }
-  return 'evening';
-}
+const scale = 10;
 
 const welcomeText = [
-  'Welcome to my site.', 1000 * scale,
-  `I hope you are having a great ${timeSpecifier()}.`, 1000
+  'Welcome to my website.', 1000 * scale,
+  'Welcome to my journal.', 1000 * scale,
+  'Welcome to my blog.', 1000 * scale,
+  'Welcome to my space.', 1000 * scale,
 ];
 
 function Banner() {
-  timeSpecifier();
   return (
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
       <Sheet
@@ -45,7 +40,7 @@ function Banner() {
           justifyContent: 'center',
         }}
       >
-        <Typography sx={{color: '#ebebef'}} zIndex={2} level='h2' component='h4' textAlign={'center'}>
+        <Typography sx={{color: '#ebebef', my: 'auto'}} zIndex={2} level='h2' component='h4' textAlign={'center'}>
           <TypeAnimation
             sequence={welcomeText}
             speed={25}
@@ -54,6 +49,22 @@ function Banner() {
             repeat={Infinity}
           />
         </Typography>
+        <Box>
+        <Sheet sx={{
+          ml: 'auto',
+          mr: '20px',
+          height: '50px',
+          width: '50px',
+          borderRadius: '50%',
+          display:'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+          }}>
+            <BounceDiv>
+            <ArrowDown />
+            </BounceDiv>
+        </Sheet>
+      </Box>
       </Sheet>
     </Box>
   )

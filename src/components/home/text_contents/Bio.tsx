@@ -36,10 +36,7 @@ function Bio() {
        at the University of California, Santa Cruz and aspiring Software Enginner. \
        I was born and raised in San Diego and am currently living in Santa Cruz. \
         When I'm not programming or researching new technology trends I'm touching grass \
-        either by travelling to unique places, climbing up rock faces, or summiting mountains.
-        I decided to build this site first and for most as a fun project where I can record my \
-        progress as a developer, and second as a way to share my interests and non-technical pursuits.
-      `}
+        either by travelling to unique places, climbing up rock faces, or summiting mountains.`}
       </Typography>
     </Sheet>
   </Box>

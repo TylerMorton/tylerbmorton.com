@@ -28,7 +28,7 @@ interface Props {
 }
 
 
-export default function Post({source, frontMatter}: Props) {
+export default function Post({ source, frontMatter }: Props) {
   const router = useRouter()
   //const title = `${frontMatter.title} | Next.js Blog Example with ${CMS_NAME}`
   if (!router.isFallback && !frontMatter?.slug) {
@@ -36,33 +36,36 @@ export default function Post({source, frontMatter}: Props) {
   }
 
   return (
-    <Box sx={{ display: 'flex', height: '100dvh'}}>
-    <Header />
-    <CssBaseline />
-    <Appbar />
-    <Sidebar selected='' />
+    <Box sx={{ display: 'flex', height: '100dvh' }}>
+      <Header />
+      <CssBaseline />
+      <Appbar />
+      <Sidebar selected='' />
       {router.isFallback ? (
         <Typography>Loading...</Typography>
       ) : (
         <Box
-        component='main'
-        sx={(theme) => ({
-          px: {
-            xs: 2,
-            md: 6,
-          },
-          py: { xs: `calc(${theme.spacing(0)} + var(--Header-height))` },
-          flex: 1,
-          display: 'flex',
-          flexDirection: 'column',
-          minWidth: 0,
-          height: '100dvh',
-          gap: 1,
-        })
-        }
-      >
-        <PostTitle text={frontMatter.title} />
-        <MDXRemote {...source} components={components} />
+          component='main'
+          sx={(theme) => ({
+            px: {
+              xs: 4,
+              md: 6,
+            },
+            pt: { xs: `calc(${theme.spacing(0)} + var(--Header-height))` },
+            pb: '20px',
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            minWidth: 0,
+            height: '100dvh',
+            gap: 1,
+          })
+          }
+        >
+          <PostTitle text={frontMatter.title} />
+          <Box>
+            <MDXRemote {...source} components={components} />
+          </Box>
         </Box>
       )}
     </Box>
@@ -85,7 +88,7 @@ export async function getStaticProps({ params }: Params) {
     'ogImage',
     'coverImage',
   ])
-  
+
   return {
     props: {
       source: post.source,

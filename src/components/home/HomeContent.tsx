@@ -11,8 +11,6 @@ import Banner from './Banner';
 import Bio from './text_contents/Bio';
 import Inspiration from './text_contents/Inspiration';
 import Footer from '../footer';
-
-
 function HomeContent() {
   return (
     <Box
@@ -38,7 +36,6 @@ function HomeContent() {
           lg: 30,
         },
       }}>
-
       </Box>
       <Banner />
       <Box sx={{

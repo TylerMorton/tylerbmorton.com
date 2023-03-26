@@ -24,7 +24,7 @@ function Inspiration() {
         Inspiration for the site
       </Typography>
       <Typography level='body1' component='h1'>
-        {`I decided to build this site first and for most as a fun project where I can record my \
+        {`I decided to build this site first and foremost as a fun project where I can record my \
         progress as a developer, and second as a way to share my interests and non-technical pursuits.
       `}
       </Typography>

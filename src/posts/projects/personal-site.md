@@ -1,6 +1,6 @@
 ---
 title: 'How I built & deployed this site using Next.js'
-excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus.'
+excerpt: 'Following in the footsteps of many, many other developers I decided it was time to build a website to share my projects, research and life events.'
 coverImage: 'https://source.unsplash.com/random'
 date: '2020-03-16T05:35:07.322Z'
 author:
@@ -29,10 +29,6 @@ I began development with a default next.js app, and installed necessary tools:
   - Mui Joy: component library with a great styling system.
   - React-animations: To spice up the site ;)
 
-Being someone who has lot's of trouble with frontend I started with boilerplate from Mui Joy's great selection of templates. With a base setup I then began to to remove extraneous features. I then went to work adding dark/light mode, Background Image using Next.js's Image Optimization feature, and creating static pages based off of the markdown files. I would continue basic development practices to meet my minimum viable product, beautify the UI, and optimize the performance of the site. Having a decent minimum viable product I began to decide I was going to deploy the site. I have never deployed a site before and was a great learning experience (a.k.a I spend hours learning about tools that I never ended up using for this project). I originally attempted to 
-
-## Deployment
-
-## Things I did wrong
+Being someone who has lot's of trouble with frontend I started with boilerplate from Mui Joy's great selection of templates. With a base setup I then began to to remove extraneous features. I then went to work adding dark/light mode, Background Image using Next.js's Image Optimization feature, and creating static pages based off of the markdown files. I would continue basic development practices to meet my minimum viable product, beautify the UI, and optimize the performance of the site. Having a decent minimum viable product I began to decide I was going to deploy the site. I have never deployed a site before and was a great learning experience (a.k.a I spend hours learning about tools that I never ended up using for this project). I had a docker container for the web build so I looked for options in which it would be easy to deploy a docker container. I first attempted to use aws ecs. However, I ran into way too many configuration errors that while for a industry level setup may find useful was simply a waste of time for my use case. Looking for an easy solution I came across Google Cloud Run which took me mere minutes to add my container. Finally I used godaddy to obtain a domain which I mapped with my deployed container.
 
 ## What I learned
