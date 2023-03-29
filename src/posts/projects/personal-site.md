@@ -10,6 +10,9 @@ ogImage:
   url: '/assets/blog/hello-world/cover.jpg'
 ---
 
+<img src="/next-banner.jpeg" style={{"height": "250px", "width": "100%"}}/> 
+
+
 Following in the footsteps of many, many other developers I decided it was time to build a website to share my projects, research and life events.
 
 ## Design stage

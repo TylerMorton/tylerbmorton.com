@@ -18,6 +18,13 @@ type Props = {
   slug: string
 }
 
+const readableDate = (str: string) => {
+  const date = new Date(str);
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+
+  return date.toLocaleDateString(undefined, options);
+}
+
 const HeroPost = ({
   title,
   date,
@@ -49,10 +56,12 @@ const HeroPost = ({
         <Typography level='h4' component='h4'>
           {title}
         </Typography>
-        <Typography>{date}</Typography>
+        <Typography>{readableDate(date)}</Typography>
+        <Box width='100%'>
         <Typography level='body1' component='h1'>
         {excerpt} 
         </Typography>
+        </Box>
       </Sheet>
     </Box>
   );

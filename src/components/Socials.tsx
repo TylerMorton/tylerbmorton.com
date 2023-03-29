@@ -1,6 +1,6 @@
 import { Box, IconButton } from '@mui/joy';
 import React from 'react'
-import { GitHub, Linkedin, FileText } from 'react-feather';
+import { GitHub, Linkedin, FileText, Mail } from 'react-feather';
 import Link from 'next/link';
 
 export default function Socials() {
@@ -36,6 +36,15 @@ export default function Socials() {
       component={Link}
       href="/resume" >
         <FileText />
+      </IconButton>
+      <IconButton 
+        aria-label='my github'
+        color='neutral'
+        sx={{"&:hover": {color: 'orange'}}}
+        variant='outlined' component={Link}
+        href="mailto:tbmorton@ucsc.edu"
+        passHref={true}>
+        <Mail />
       </IconButton>
     </Box>
   );
