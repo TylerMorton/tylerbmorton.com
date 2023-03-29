@@ -32,3 +32,20 @@ I began development with a default next.js app, and installed necessary tools:
 Being someone who has lot's of trouble with frontend I started with boilerplate from Mui Joy's great selection of templates. With a base setup I then began to to remove extraneous features. I then went to work adding dark/light mode, Background Image using Next.js's Image Optimization feature, and creating static pages based off of the markdown files. I would continue basic development practices to meet my minimum viable product, beautify the UI, and optimize the performance of the site. Having a decent minimum viable product I began to decide I was going to deploy the site. I have never deployed a site before and was a great learning experience (a.k.a I spend hours learning about tools that I never ended up using for this project). I had a docker container for the web build so I looked for options in which it would be easy to deploy a docker container. I first attempted to use aws ecs. However, I ran into way too many configuration errors that while for a industry level setup may find useful was simply a waste of time for my use case. Looking for an easy solution I came across Google Cloud Run which took me mere minutes to add my container. Finally I used godaddy to obtain a domain which I mapped with my deployed container.
 
 ## What I learned
+
+### Tools:
+- Using the react-animations libary allowed me to take a deeper dive into the emotions library and how it works. This was beneficial since another library also utilized emotion: Mui Joy.
+- I learned a bit more about Next.Js especially with the generation of static pages using pattern-matching and the getStaticProps function.
+- I have a small amount of experience with Mui but was able to learn about Mui Joy and some of the neat styling options it has compared with the basic Mui library.
+
+### Design strategy
+It would be better to design the UI early on either with Figma or on paper. The classic KISS principle often makes sites look extremely clean. Along this idea it would be best with Next.js applications to utilize the layout pattern for all web pages.
+
+
+## Helpful resources used to build the project
+
+https://github.com/vercel/next.js/tree/canary/examples/blog-starter
+https://mdxjs.com/docs/using-mdx/
+https://remark.js.org/
+https://cloud.google.com/run/docs/deploying
+
