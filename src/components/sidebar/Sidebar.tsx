@@ -79,7 +79,6 @@ export default function Sidebar({selected}: Props) {
           <SideBarListItem select={selected === '/research'} icon={<Filter/>} text={'Research'} onClick={() => {buttonHandler('/research')}} />
           <SideBarListItem select={selected === '/travels'} icon={<Map/>} text={'My Travels'} onClick={() => {buttonHandler('/travels')}} />
           <SideBarListItem select={selected === '/events'} icon={<Sunset/>} text={'Events'} onClick={() => {buttonHandler('/events')}} />
-          <SideBarListItem select={selected === '/food-drink'} icon={<Coffee/>} text={'Food & Drink'} onClick={() => {buttonHandler('/food-drink')}} />
           <SideBarListItem select={selected === '/music'} icon={<Headphones/>} text={'Music'} onClick={() => {buttonHandler('/music')}} />
           <SideBarListItem select={selected === '/language'} icon={<Globe/>} text={'Language'} onClick={() => {buttonHandler('/language')}} />
           <SideBarListItem select={selected === '/miscellaneous'} icon={<MoreHorizontal/>} text={'Miscellaneous'} onClick={() => {buttonHandler('/miscellaneous')}} />
