@@ -4,8 +4,7 @@ excerpt: 'Following in the footsteps of many, many other developers I decided it
 coverImage: 'https://source.unsplash.com/random'
 date: '2020-03-16T05:35:07.322Z'
 author:
-  name: Tim Neutkens
-  picture: '/assets/blog/authors/tim.jpeg'
+  name: Tyler Morton
 ogImage:
   url: '/assets/blog/hello-world/cover.jpg'
 ---
